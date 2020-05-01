@@ -55,7 +55,7 @@ class VKLight:
         self.url_param = dict(lang=self.lng, v=self.apiVersion)
 
 
-    def call(self, method, args:dict, **kwargs):
+    def call(self, method, args:dict):
         """
         Calling VK API methods with methods params
             :param method: VK API method name.
