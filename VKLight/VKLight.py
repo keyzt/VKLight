@@ -32,7 +32,7 @@ host = "api.vk.me"
 proxyHost = "v-api-proxy.xtrafrancyz.net"
 apiVersion = "5.125"
 
-userAgent = {'user-agent': 'VKAndroidApp/5.2.1 (5112)'}
+userAgent = {'user-agent': 'VKAndroidApp/6.2.1 (5112)'}
 
 
 
@@ -57,7 +57,7 @@ class VKLight:
 
     def call(self, method, args:dict):
         """
-        Calling VK API methods with methods params
+        Calling VK API methods with method arguments
             :param method: VK API method name.
             :param args: method arguments
         """
