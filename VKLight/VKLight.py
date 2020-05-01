@@ -30,9 +30,9 @@ import requests
 
 host = "api.vk.me"
 proxyHost = "v-api-proxy.xtrafrancyz.net"
-apiVersion = "5.115"
+apiVersion = "5.125"
 
-userAgent = {'user-agent': 'VKAndroidApp/5.55.1-4770'}
+userAgent = {'user-agent': 'VKAndroidApp/5.2.1 (5112)'}
 
 
 
@@ -49,6 +49,7 @@ class VKLight:
         self.access_token = self.__v("access_token", param) or "en"
         self.apiVersion = self.__v("v", param) or apiVersion
         self.lng = self.__v("lng", param) or ""
+        
         self.host = proxyHost if self.__v("proxy", param) else host
         self.baseURL = f"https://{self.host}/method/"
         self.url_param = dict(lang=self.lng, v=self.apiVersion)
