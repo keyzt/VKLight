@@ -24,7 +24,6 @@
 # SOFTWARE.
 
 
-import json
 import requests
 
 
