@@ -36,12 +36,13 @@ userAgent = {'user-agent': 'VKAndroidApp/6.2.1 (5112)'}
 
 
 class VKLight:
-    """VKLight - Light VK API wrapper"""
+    """VKLight - Light wrapper for VK's API"""
 
     def __init__(self, param: dict = None):
         """
-        :param: Dictionary includes 'access_token' and some params.
-                For example: dict(access_token="...", v=5.125, lng="en")
+            :param: Dictionary including  fields such as 'access_token' (required), 'v' and etc.
+
+            For example: dict(access_token="your access_token", v='5.125', lng="en", proxy=true)
         """
         super(VKLight, self).__init__()
 
@@ -54,11 +55,11 @@ class VKLight:
         self.url_param = dict(lang=self.lng, v=self.apiVersion)
 
 
-    def call(self, method, args:dict):
+    def call(self, method:str, args:dict=dict()) -> dict:
         """
-        Calling VK API methods with method arguments
+        Calls VK API methods
             :param method: VK API method name.
-            :param args: method arguments
+            :param args: arguments of this method.
         """
         args['access_token'] = self.access_token
 
@@ -80,7 +81,9 @@ class VKLight:
         return resp
     
     def execute(self, code:str=""):
-        """Calling Execute method
+        """Calls Execute method
+           Learn More: https://vk.com/dev/execute
+           
            param:code= VKScript code 
         """
         return self.call("execute", {"code": code})
