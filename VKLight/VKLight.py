@@ -42,7 +42,7 @@ class VKLight:
         """
             :param: Dictionary including  fields such as 'access_token' (required), 'v' and etc.
 
-            For example: dict(access_token="your access_token", v='5.125', lng="en", proxy=true)
+            For example: dict(access_token="your access_token", v='5.125', lng="en", host="api.vk.me")
         """
         super(VKLight, self).__init__()
 
@@ -51,6 +51,7 @@ class VKLight:
         self.lng = self.__v("lng", param) or ""
         
         self.host = proxyHost if self.__v("proxy", param) else host
+        self.host = param['host'] if self.__v("host", param) else host
         self.baseURL = f"https://{self.host}/method/"
         self.url_param = dict(lang=self.lng, v=self.apiVersion)
 
