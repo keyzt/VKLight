@@ -38,7 +38,7 @@ userAgent = {'user-agent': 'VKAndroidApp/6.2.1 (5112)'}
 class VKLight:
     """VKLight - Light wrapper for VK's API"""
 
-    def __init__(self, param: dict = None):
+    def __init__(self, param: dict = dict()):
         """
             :param: Dictionary including  fields such as 'access_token' (required), 'v' and etc.
 
@@ -54,6 +54,9 @@ class VKLight:
         self.host = param['host'] if self.__v("host", param) else host
         self.baseURL = f"https://{self.host}/method/"
         self.url_param = dict(lang=self.lng, v=self.apiVersion)
+
+    def __call__(self, method:str, args:dict=dict()):
+        return self.call(method, args)
 
 
     def call(self, method:str, args:dict=dict()) -> dict:
