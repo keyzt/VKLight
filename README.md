@@ -1,2 +1,2 @@
 # VKLight
- Light wrapper VK API
+ Легкая обёртка для работы с VK API.

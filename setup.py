@@ -1,31 +1,42 @@
-from setuptools import setup
+#!/usr/bin/env python
+
+import os
+import re
+
+from setuptools import setup, find_packages
 
 
-version = "1.1.1"
-author = "Ivan"
-description = "Light wrapper for VK's API"
+def get_version(file_rel_path):
+    base_dir = os.path.dirname(__file__)
+    file_abs_path = os.path.join(base_dir, file_rel_path)
+    with open(file_abs_path) as file:
+        file_content = file.read()
+        version = re.findall(r"^__version__ = '(.+)'$", file_content, re.MULTILINE)[0]
+        return version
 
-with open("README.md", "r") as file:
-    long_description = file.read()
 
 setup(
-    name="VKLight",
-    license="MIT",
-    python_requires=">=3.6",
-    version=version,
-    author=author,
-    description=description,
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/keyzt/VKlight",
-    packages=["VKLight"],
-    install_requires=['requests'],
-    scripts=[
-        "VKlight/VKlight"
+    name='VKLight',
+    version=get_version('VKLight.py'),
+    author='Ivan',
+    author_email='',
+
+    url='https://github.com/keyzt/VKLight',
+    download_url='https://github.com/keyzt/VKLight/archive/master.zip',
+    description='VKLight - Light wrapper for VK\'s API',
+
+    packages=find_packages(),
+    install_requires=[
+        'requests',
     ],
-    project_urls={
-        "Documentation": "https://github.com/keyzt/VKLight/blob/master/README.md",
-        "Source": "https://github.com/keyzt/VKlight",
-        "Tracker": "https://github.com/keyzt/VKLight/issues",
-    },
+
+    license='MIT License',
+    classifiers=[
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+    ],
+    keywords='vk.com vk api vk_api',
 )
