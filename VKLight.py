@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""
-VKLight - Light wrapper for VK's API
 
-@author=Ivan
-@version=1.1
+"""
+Light wrapper for VK's API
 """
 
-__author__ = 'Ivan'
 __version__ = "1.1"
+__author__ = 'Ivan'
 
 
 import requests
@@ -24,7 +22,7 @@ userAgent = {'user-agent': 'VKAndroidApp/6.2.1 (5112)'}
 
 
 class VKLight:
-    """VKLight - Light wrapper for VK's API"""
+    """VKLigth - Light wrapper for VK's API"""
 
     def __init__(self, param= dict()):
         """

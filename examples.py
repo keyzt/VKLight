@@ -1,0 +1,3 @@
+import VKLight
+
+help(VKLight)

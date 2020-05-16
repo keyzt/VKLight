@@ -17,13 +17,13 @@ def get_version(file_rel_path):
 
 setup(
     name='VKLight',
-    version=get_version('VKLight.py'),
+    version='1.1',
     author='Ivan',
     author_email='',
 
     url='https://github.com/keyzt/VKLight',
     download_url='https://github.com/keyzt/VKLight/archive/master.zip',
-    description='VKLight - Light wrapper for VK\'s API',
+    description='Light wrapper for VK\'s API',
 
     packages=find_packages(),
     install_requires=[
