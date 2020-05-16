@@ -1,3 +1,0 @@
-import VKLight
-
-help(VKLight)
