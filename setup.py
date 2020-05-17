@@ -17,7 +17,7 @@ def get_version(file_rel_path):
 
 setup(
     name='VKLight',
-    version='1.1',
+    version=get_version('VKLight.py'),
     author='Ivan',
     author_email='',
 
