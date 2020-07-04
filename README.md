@@ -18,13 +18,14 @@ api = VKLight({
 	"host": "api.vk.me"
 })
 ```
-```
-api.call("users.get", { "user_id": 1}) # {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
+```python
+api.call("users.get", { "user_id": 1}) 
+# {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
 ```
 или 
 ```python
 api("users.get", {"user_id": 1})
 ```
-s
+
 # Лицензия
 MIT License
