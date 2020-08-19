@@ -15,12 +15,17 @@ def get_version(file_rel_path):
         return version
 
 
+with open("README.md", "r", encoding='utf-8') as fh:
+    long_description = fh.read()
+
+
 setup(
     name='VKLight',
     version=get_version('VKLight.py'),
     author='Ivan',
     author_email='',
-
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/keyzt/VKLight',
     download_url='https://github.com/keyzt/VKLight/archive/master.zip',
     description='Light wrapper for VK\'s API',
@@ -35,8 +40,8 @@ setup(
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
     ],
     keywords='vk.com vk api vk_api',
 )

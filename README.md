@@ -4,7 +4,6 @@
 # Установка
 Coming soon...
 
-Либо же можно просто добавить файл `VKLight.py` в свой проект. Для работы необходим модуль requests.
 
 # Пример использования
 
@@ -22,14 +21,16 @@ api = VKLight({
 api.call("users.get", { "user_id": 1}) 
 # {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
 ```
+или 
+```python
+api("users.get", {"user_id": 1})
+# {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
+```
+
 Использование execute-методов
 ```python
 api.execute(r"return API.users.get({'user_id': 1});")
 # {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
-```
-или 
-```python
-api("users.get", {"user_id": 1})
 ```
 
 # Лицензия
