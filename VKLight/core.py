@@ -14,8 +14,7 @@ host = "api.vk.me"
 proxyHost = "v-api-proxy.xtrafrancyz.net"
 apiVersion = "5.125"
 
-userAgent = {'user-agent': 'VKAndroidApp/6.2.1 (5112)'}
-
+userAgent = {'user-agent': 'VKAndroidApp/6.10.3 (5896) (Android 10.0; SDK 29; Xiaomi Redmi Note 7; ru)'}
 
 
 class VKLight:
@@ -25,22 +24,21 @@ class VKLight:
         """
         :param: Dictionary including  fields such as 'access_token' (required), 'v' and etc.
 
-        For example: dict(access_token="your access_token", v='5.125', lng="en", host="api.vk.me")
+        For example: dict(access_token="your access_token", v='5.125', lang="en", host="api.vk.me")
         """
         super(VKLight, self).__init__()
 
-        self.access_token = self.__v("access_token", param) or "en"
+        self.access_token = self.__v("access_token", param) or ""
         self.apiVersion = self.__v("v", param) or apiVersion
-        self.lng = self.__v("lng", param) or ""
+        self.lang = self.__v("lang", param) or "en"
         
         self.host = proxyHost if self.__v("proxy", param) else host
         self.host = param['host'] if self.__v("host", param) else host
         self.baseURL = f"https://{self.host}/method/"
-        self.url_param = dict(lang=self.lng, v=self.apiVersion)
+        self.url_param = dict(lang=self.lang, v=self.apiVersion)
 
     def __call__(self, method:str, args=dict()):
         return self.call(method, args)
-
 
     def call(self, method:str, args=dict()) -> dict:
         """

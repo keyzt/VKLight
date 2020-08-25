@@ -10,17 +10,20 @@ pip install VKLight
 # Пример использования
 
 ```python
-from VKLight import VKLight
+from VKLight import VKLight, VKLightError
 
 api = VKLight({
 	"access_token": "...",
 	"v": "5.150",
-	"lng": "ru",
+	"lang": "ru",
 	"host": "api.vk.me"
 })
 ```
 ```python
-api.call("users.get", { "user_id": 1}) 
+try:
+	api.call("users.get", { "user_id": 1})
+except VKLightError as e:
+	print(e) 
 # {'response': [{'id': 1, 'first_name': 'Павел', 'last_name': 'Дуров', 'is_closed': False, 'can_access_closed': True}]}
 ```
 или 
