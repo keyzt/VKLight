@@ -13,7 +13,7 @@ import requests
 host = "api.vk.me"
 proxyHost = "v-api-proxy.xtrafrancyz.net"
 apiVersion = "5.125"
-userAgent = {'user-agent': 'VKAndroidApp/6.10.3-5896 (Unknown; SDK 28; armeabi-v7a; Android 9; ru; 1920x1080)'}
+userAgent = {'user-agent': 'VKAndroidApp/6.13.1-6127 (Android 10.0; SDK 29; arm64-v8a; VKLight 1.3.6; ru; 1920x1080)'}
 
 
 class VKLight:
