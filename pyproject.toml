@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "VKLight"
-version = "1.3.6"
+version = "1.3.8"
 description = "VKLight - Light wrapper for VK's API"
 authors = ["Ivan"]
 readme = "README.md"
