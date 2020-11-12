@@ -7,10 +7,11 @@ Light wrapper for VK's API
 
 import requests
 
+
 host = "api.vk.me"
 proxyHost = "v-api-proxy.xtrafrancyz.net"
 apiVersion = "5.125"
-userAgent = {'user-agent': 'VKAndroidApp/6.13.1-6127 (Android 10.0; SDK 29; arm64-v8a; VKLight 1.3.6; ru; 1920x1080)'}
+userAgent = {'user-agent': 'VKAndroidApp/6.13.1-6127 (Android 11.0; SDK 30; arm64-v8a; VKLight 1.3.8; ru; 1920x1080)'}
 
 
 class VKLight:
